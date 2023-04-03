@@ -1,0 +1,14 @@
+.form-register__input {
+    width: 358px;
+    margin-top: -4px;
+    background-color:transparent;
+    outline: none;
+    padding: 0 0 13px;
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    color: #CCCCCC;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    font-family: 'Inter', Arial, sans-serif;
+}

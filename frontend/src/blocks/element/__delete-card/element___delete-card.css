@@ -1,0 +1,16 @@
+.element__delete-card {
+    position: absolute;
+    background-image: url(../../../image/UrnBox.svg);
+    background-repeat: no-repeat;
+    background-color: rgba(28,28,28,0);
+    height: 19px;
+    width: 19px;
+    border: none;
+    right: 21px;
+    top: 20px;
+    cursor: pointer;
+}
+.element__delete-card:hover {
+    background-image: url(../../../image/UrnBoxactiv.svg);
+    
+}

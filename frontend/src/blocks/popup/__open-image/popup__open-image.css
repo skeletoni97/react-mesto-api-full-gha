@@ -1,0 +1,9 @@
+.popup__open-image {
+    position: fixed;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

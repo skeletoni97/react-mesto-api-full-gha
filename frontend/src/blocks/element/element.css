@@ -1,0 +1,7 @@
+.element {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    position: relative;
+}

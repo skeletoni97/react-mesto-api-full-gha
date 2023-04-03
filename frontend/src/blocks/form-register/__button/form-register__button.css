@@ -1,0 +1,22 @@
+.form-register__button {
+  width: 358px;
+  background: #ffffff;
+  border-radius: 2px;
+  color: rgb(0, 0, 0);
+  transition: 0.2s linear;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 14px 0 14px;
+  margin-top: 185px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+.form-register__button:hover {
+opacity: 0.6;
+  }
+  
