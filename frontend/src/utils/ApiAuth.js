@@ -51,6 +51,7 @@ class ApiAuth {
         }
   }
   
+  
   export const apiAuth  = new ApiAuth({
     baseUrl: 'http://api.skeletoni97.nomoredomains.monster',
     headers: {
