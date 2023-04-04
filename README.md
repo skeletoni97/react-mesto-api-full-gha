@@ -8,8 +8,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.10.44
 
-Frontend https://...
+Frontend https://skeletoni97.nomoredomains.monster/
 
-Backend https://...
+Backend https://api.skeletoni97.nomoredomains.monster/
