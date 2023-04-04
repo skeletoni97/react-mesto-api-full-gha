@@ -52,7 +52,7 @@ class ApiAuth {
   }
   
   export const apiAuth  = new ApiAuth({
-    baseUrl: 'http://localhost:3001',
+    baseUrl: 'http://api.skeletoni97.nomoredomains.monster',
     headers: {
         "Content-Type": "application/json" 
     },
