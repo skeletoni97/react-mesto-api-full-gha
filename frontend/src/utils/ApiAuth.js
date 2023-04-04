@@ -53,7 +53,7 @@ class ApiAuth {
   
   
   export const apiAuth  = new ApiAuth({
-    baseUrl: 'http://api.skeletoni97.nomoredomains.monster',
+    baseUrl: 'https://api.skeletoni97.nomoredomains.monster',
     headers: {
         "Content-Type": "application/json" 
     },
