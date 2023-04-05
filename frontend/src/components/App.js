@@ -152,8 +152,8 @@ function App() {
       .authorization(email, paswsord)
       .then((res) => {
         localStorage.setItem("token", res.token);
-        setIsLogin(true);
         setIsEmail(email)
+        setIsLogin(true);
       })
       .catch((err) => {});
   }

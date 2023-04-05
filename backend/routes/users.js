@@ -5,10 +5,10 @@ const { celebrate, Joi } = require('celebrate');
 const router = express.Router();
 
 const { getUsers, getUsersId, createUser } = require('../controllers/users');
-const { patchUsersMe, patchUsersMeAvatar, getUsersMe } = require('../controllers/users');
+const { patchUsersMe, patchUsersMeAvatar, getUserMe } = require('../controllers/users');
 
 router.get('/', getUsers);
-router.get('/me', getUsersMe);
+router.get('/me', getUserMe);
 router.get('/:userId', celebrate({
   params: Joi.object().keys({
     userId: Joi.string().required().length(24).hex(),

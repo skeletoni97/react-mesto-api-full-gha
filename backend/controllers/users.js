@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const { ObjectId } = mongoose.Types;
+const JWT_SECRET = require('../config');
 
 const User = require('../models/user');
 const BadRequestError = require('../errors/BadRequestError');
@@ -12,7 +13,7 @@ const NotFoundError = require('../errors/NotFoundError');
 const UnauthorizedError = require('../errors/UnauthorizedError');
 const ConflictError = require('../errors/ConflictError');
 
-module.exports.getUsersMe = (req, res, next) => {
+module.exports.getUserMe = (req, res, next) => {
   User.findById({ _id: req.user._id })
     .orFail(() => next(new NotFoundError('Пользователь по указанному _id не найден.')))
     .then((users) => res.send(users))
@@ -31,8 +32,8 @@ module.exports.login = (req, res, next) => {
           if (!matched) {
             return next(new UnauthorizedError('Неправильные пароль или почта.'));
           }
-          const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
-          res.cookie('jwt', token, { httpOnly: true, sameSite: true });
+          const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
+          // res.cookie('jwt', token, { httpOnly: true, sameSite: true });
           return res.send({ token });
         });
     })

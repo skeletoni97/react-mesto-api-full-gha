@@ -4,17 +4,16 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const {
-  celebrate, Joi, errors, isCelebrateError,
+  celebrate, Joi, errors,
 } = require('celebrate');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/NotFoundError');
-const BadRequestError = require('./errors/BadRequestError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
   useNewUrlParser: true,
@@ -65,18 +64,7 @@ app.use(auth, (req, res, next) => {
 app.use(errors());
 
 app.use((err, req, res, next) => {
-  let details;
-
-  if (isCelebrateError(err)) {
-    details = new BadRequestError(err.details.get('body'));
-  } else {
-    details = err;
-  }
-
-  const { statusCode = 500, message = 'На сервере произошла ошибка' } = details;
-  res.status(statusCode).send({
-    message,
-  });
+  res.status(err.statusCode).send({ message: err.message });
   next();
 });
 

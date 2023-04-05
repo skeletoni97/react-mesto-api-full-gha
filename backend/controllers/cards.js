@@ -8,7 +8,7 @@ const Card = require('../models/card');
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
-    .populate('owner')
+    .populate(['likes', 'owner'])
     .then((cards) => res.send(cards))
     .catch((err) => next(err));
 };
