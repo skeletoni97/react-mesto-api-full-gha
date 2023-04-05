@@ -2,13 +2,12 @@ const express = require('express');
 // const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const {
   celebrate, Joi, errors, isCelebrateError,
 } = require('celebrate');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
-const cors = require('cors');
-
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/NotFoundError');
@@ -62,7 +61,6 @@ app.use(errorLogger);
 app.use(auth, (req, res, next) => {
   next(new NotFoundError('Страница не найдена'));
 });
-
 
 app.use(errors());
 
